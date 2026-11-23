@@ -1,0 +1,842 @@
+/*全局样式重置*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background-color: #F5EFE3;
+	min-height: 100vh;
+}
+
+/*导航栏样式*/
+.nav{
+	display: flex;/*弹性布局*/
+	padding:0 16px;
+	background-color: #EDE7DC;
+	height: 90px;
+	align-items: center;
+	/*始终悬浮、跟随滚动设置*/
+	position: fixed; 
+	top: 0;/*固定在页面顶部*/
+	left: 0;/*从页面左侧开始*/
+	width: 100%;/*铺满整个页面宽度*/
+	z-index: 999;/*确保在最顶层（数值足够大即可）*/
+}
+/*Logo*/
+.nav-logo{
+	display: inline-block;
+	padding-top: 12px;
+	padding-left: 32px;
+	padding-right: 80px;/*和导航项的间距*/
+}
+
+.nav-logo img{
+	width: 200px;
+	height: auto;
+}
+/*导航菜单*/
+.nav-menu{
+	display: flex;
+	align-items: center;
+	list-style: none;/*清除ul默认圆点*/
+	margin: 0;
+	padding: 0;
+	gap: 80px;/*导航栏按钮间距*/
+}
+
+.nav-link{
+	display: inline-block;/*行内块布局，支持padding和圆角*/
+	background-color: #E0B284;
+	color: #fff;
+	text-decoration: none;/*清除下划线*/
+	border-radius: 20px;/*圆角矩形效果*/
+	font-size: 18px;
+	padding: 8px 16px;
+}
+.nav-item a:hover{
+	color: #D3D3D3;
+}
+.nav-link.active,
+.nav-link:hover{
+	background-color: #D49A6A;
+}
+
+.menu-btn{
+	background: transparent;
+	border: none;
+	cursor: pointer;/*光标*/
+	padding: 6px 10px;
+	
+	align-items: center;
+	justify-content: center;
+	
+	border-radius: 6px;
+	display: none;
+}
+.menu-btn img{
+	width: 40px;
+	height: 40px;
+}
+/*账号*/
+.nav-account{
+	position: absolute;/*绝对定位*/
+	top: 28px;
+	right: 40px;
+}
+.nav-account img{
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+}
+
+
+/*轮播图样式*/
+#carousel{
+	margin-top: 90px;/*加顶部间距=导航栏高度，避免被导航栏遮挡*/
+	width: 100%;
+	height: 825px;/*按需调整轮播图高度*/
+	overflow: hidden;/*防止图片溢出*/
+	position: relative;
+}
+
+.carousel-item img{
+	width: 100%;
+	height: 825px;
+	object-fit: cover;/*图片等比例填充*/
+}
+/*搜索框*/
+/*外层容器*/
+.search-wrapper{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);/*在容器中居中*/
+	width: 30%;/*搜索框宽度*/
+	z-index: 10;/*保证在轮播图上层*/
+}
+.search-form{
+	display: flex;
+	align-items: center;
+	background-color: #fff;
+	border-radius: 30px;
+	padding: 8px 16px;
+	box-shadow: 0 2px 4px rgba(0,0, 0, 0.1);
+}
+/*提交按钮：仅显示图标，无额外样式*/
+.search-submit-btn{
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0 6px 0 0;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.search-submit-btn img{
+	width: 24px;
+	height: auto;
+}
+/*输入框*/
+.search-input{
+	flex: 1;/*占满剩余空间*/
+	border: none;
+	outline: none;/*移除轮廓线*/
+	background: transparent;
+	font-size: 16px;
+	color: #333;
+	padding: 8px 0;
+}
+.search-input::placeholder{
+	color: #999;
+}
+
+
+/*推荐栏样式*/
+/*书籍*/
+/*顶部标题栏*/
+.header{
+	position: relative;
+	text-align: center;
+	padding: 40px 0;
+	margin-bottom: 30px;
+}
+.header-line-fir{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%);
+	width: 100%;/*左右线条宽度*/
+	height: 4px;
+	background-color: #E0B284;
+	z-index: 1;
+}
+.header-line-sec{
+	position: absolute;
+	bottom: 90px;/*此处调整线条高度*/
+	left: 50%;
+	transform: translate(-50%);
+	width: 100%;
+	height: 2px;
+	background-color: #E0B284;
+	z-index: 1;
+}
+.header h1{
+	display: inline-block;
+	font-size: 3em;
+	color: #333;
+	background-color: #F5EFE3;/*背景色遮挡线条中段*/
+	padding: 20px 70px;/*标题位置 遮挡宽度*/
+	position: relative;
+	z-index: 2;
+}
+.header h1 a {
+    text-decoration: none;  /* 去掉下划线 */
+    color: inherit;         /* 继承h1的文字颜色 */
+}
+.header h1 a:hover {
+	color: #E0B284;
+}
+
+/*书籍卡片*/
+.book-container{
+	display: flex;
+	justify-content: center;/*多个元素整体居中*/
+	gap: 80px;
+	padding: 0 50px;
+	margin-bottom: 50px;
+	flex-wrap: wrap;/*空间不足时换行*/
+}
+.book-card{
+	text-align: center;
+	max-width: 180px;
+}
+.book-card img{
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.bookname{
+	/*多行文本截断并显示省略号*/
+	overflow: hidden;/*隐藏超出容器的内容*/
+	text-overflow: ellipsis;/*文本溢出时显示省略号*/
+	
+	display: -webkit-box;
+	-webkit-line-clamp: 1;/*单行截断*/
+	-webkit-box-orient: vertical;/*让文本按垂直方向排列以正确计算行数*/
+	/*支持更多浏览器*/
+	line-clamp: 1;
+	box-orient: vertical;
+	
+	font-size: 1.3em;
+	color: #555;
+	margin-bottom: 3px;
+}
+.book-img-link{
+	display: block;/*block后，整个矩形区域都可点击*/
+}
+.book-img-link img{
+	border: none;
+}
+.book-link{
+	color: #555;
+	text-decoration: none;/*清除下划线*/
+}
+.book-link:hover{
+	color: #E0B284;
+	text-decoration: none;
+}
+.author{
+	font-size: 0.9rem;
+	color: #555;
+}
+.more-link{
+	text-align: right;
+	cursor: pointer;
+	padding: 20px 50px;
+	color: #666;
+}
+.more-link a{
+	text-decoration: none;
+	color: inherit;
+}
+.more-link a:hover{
+	color: #E0B284;
+}
+
+/*文章*/
+/*标题栏*/
+.header-re{
+	position: relative;
+	text-align: center;
+	padding: 40px 0;
+	margin-bottom: 30px;
+}
+.header-re h1 a{
+	text-decoration: none;
+	color: inherit;
+}
+.header-re h1 a:hover{
+	color: #E0B284;
+}
+.header-line-fir-re{
+	position: absolute;
+	top: 35px;
+	left: 50%;
+	transform: translate(-50%);
+	width: 100%;/*左右线条宽度*/
+	height: 4px;
+	background-color: #E0B284;
+	z-index: 1;
+}
+
+.header-line-sec-re{
+	position: absolute;
+	bottom: 130px;/*此处调整线条高度*/
+	left: 50%;
+	transform: translate(-50%);
+	width: 100%;
+	height: 2px;
+	background-color: #E0B284;
+	z-index: 1;
+}
+.header-re h1{
+	display: inline-block;
+	font-size: 3em;
+	color: #333;
+	background-color: #F5EFE3;/*背景色遮挡线条中段*/
+	padding: 50px 70px;/*标题位置 遮挡宽度*/
+	position: relative;
+	z-index: 2;
+}
+/*文章卡片*/
+.article{
+	display: flex;
+	justify-content: center;/*多个元素整体居中*/
+	gap: 80px;
+	padding: 0 50px;
+	margin-bottom: 80px;
+	flex-wrap: wrap;/*空间不足时换行*/
+}
+.article-card{
+	text-align: left;
+	max-width: 270px;
+}
+.article-card img{
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.article-header{
+	/*多行文本截断并显示省略号*/
+	overflow: hidden;/*隐藏超出容器的内容*/
+	text-overflow: ellipsis;/*文本溢出时显示省略号*/
+	
+	display: -webkit-box;
+	-webkit-line-clamp: 1;/*单行截断*/
+	-webkit-box-orient: vertical;/*让文本按垂直方向排列以正确计算行数*/
+	/*支持更多浏览器*/
+	line-clamp: 1;
+	box-orient: vertical;
+	
+	font-size: 1.3em;
+	color: #555;
+	margin-bottom: 3px;
+}
+.article-intro{
+	/*多行文本截断并显示省略号*/
+	overflow: hidden;/*隐藏超出容器的内容*/
+	text-overflow: ellipsis;/*文本溢出时显示省略号*/
+	
+	display: -webkit-box;
+	-webkit-line-clamp: 2;/*双行截断*/
+	-webkit-box-orient: vertical;/*让文本按垂直方向排列以正确计算行数*/
+	/*支持更多浏览器*/
+	line-clamp: 2;
+	box-orient: vertical;
+	
+	font-size: 0.8em;
+	color: #555;
+	margin-top: 10px;
+	margin-bottom: 3px;
+}
+.article-img-link{
+	display: block;/*block后，整个矩形区域都可点击*/
+}
+.article-img-link img{
+	border: none;
+}
+.article-link{
+	color: #555;
+	text-decoration: none;/*清除下划线*/
+}
+.article-link:hover{
+	color: #E0B284;
+	text-decoration: none;
+}
+
+/*深度连接*/
+.connect{
+	background-color: rgba(232, 224, 219, 0.6);
+	min-height: 480px;
+	position: relative;/*新增：让子元素绝对定位基于此容器*/
+	overflow: hidden;/*新增：隐藏卡片滑入前的部分*/
+}
+/*标题栏*/
+.connect-header{
+	position: relative;
+	text-align: center;
+	padding: 30px 0;
+	margin-bottom: 30px;
+}
+.header-line-fir-connect{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%);
+	width: 100%;/*左右线条宽度*/
+	height: 4px;
+	background-color: #E0B284;
+	z-index: 5;
+}
+.connect h1{
+	display: inline-block;
+	font-size: 3em;
+	color: #333;
+	padding: 20px 70px;/*标题位置 遮挡宽度*/
+	position: relative;
+	z-index: 2;
+	background-color: inherit; /*继承父元素背景色，确保完全统一*/
+}
+.connect p{
+	color: #555;
+}
+
+/*订阅卡片*/
+.subscribe{
+	display: flex;
+	justify-content: center;
+	gap:250px;
+	padding: 0 50px;
+	flex-wrap: wrap;
+	position: relative; /*保证在详情卡片之下*/
+	z-index: 1;
+}
+
+.subscribe-card{
+	text-align: center;
+	max-width: 90px;
+	cursor: pointer;
+	transition: transform 0.2s ease;
+}
+
+.subscribe-card:hover {
+	transform: scale(1.05);/*hover放大效果*/
+}
+
+.subscribe-card img{
+	width: 100%;
+	height: 45px;
+	object-fit: contain;/*保持图片比例*/
+	margin-bottom: 20px;
+	box-shadow: none;
+}
+.subscribe-card h2{
+	font-size: 1.3em;
+	color: #555;
+	margin-bottom: 3px;
+}
+
+/* 详情卡片容器 - 核心样式 */
+.detail-container {
+  position: absolute; /* 绝对定位覆盖整个板块 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* 高于原卡片，低于关闭按钮 */
+  pointer-events: none; /* 初始不拦截点击 */
+}
+
+/*详情卡片*/
+.detail-card {
+  position: absolute;
+  top: 0;
+  right: -100%; /* 初始在板块右侧外 */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(232, 224, 219, 1); /* 同背景色，提高不透明度 */
+  padding: 60px 80px;
+  box-sizing: border-box;
+  transition: right 0.5s ease; /* 滑入动画 */
+  pointer-events: auto; /* 可交互 */
+  display: flex; /* 修改：横向排列 */
+  align-items: center; /* 垂直居中 */
+  gap: 60px; /* 文字和图片间距 */
+  opacity: 0; /* 初始透明 */
+}
+
+/* 文字内容区 */
+.detail-content {
+  flex: 1; /* 占满剩余宽度 */
+  max-width: 60%; /* 限制文字区最大宽度 */
+}
+
+/* 右侧图片区 */
+.detail-image {
+	width: 500px;
+	height: auto;
+	flex-shrink: 0;
+	border-radius: 8px;
+	background-color: rgba(232, 224, 219, 1);
+	/* 让图片居中显示，背景色充满容器*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: visible;
+}
+
+.detail-image img {
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	margin: 0;
+	padding: 0;
+	border: none;
+	position: relative;
+	z-index: 1;
+}
+
+/*激活状态 - 滑入板块*/
+.detail-card.active {
+  right: 0;
+  opacity: 1;
+}
+
+/*关闭按钮*/
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  border: none;
+  background-color: transparent;
+  font-size: 36px;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/*详情卡片内容样式*/
+.detail-card h2 {
+	font-size: 2.5em;
+	color: #333;
+	margin-bottom: 30px;
+}
+
+.detail-card p {
+	font-size: 1.2em;
+	color: #555;
+	line-height: 1.8;
+	max-width: 100%;
+	margin-bottom: 40px;
+}
+
+.detail-action button {
+	padding: 12px 30px;
+	background-color: #E0B284;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	font-size: 1.1em;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+.detail-action button:hover {
+	background-color: #d19e6d;
+}
+
+
+/*页脚样式*/
+.footer{
+	position: relative;
+	text-align: center;
+	padding: 0;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.header-line-sec-foot{
+	position: absolute;
+	bottom: 75px;/*此处调整线条高度*/
+	left: 50%;
+	transform: translate(-50%);
+	width: 100%;
+	height: 2px;
+	background-color: #E0B284;
+	z-index: 5;
+}
+
+/*响应式设计*/
+/*电脑端*/
+@media (min-width:769px) {
+	.menu-btn{
+		display: none;
+	}
+	.nav-menu{
+		display: flex!important;
+	}
+}
+
+/*移动端适配*/
+@media (max-width:768px){
+	/*导航栏适配*/
+	.nav{
+		height: 70px;
+		padding: 0 8px;
+		justify-content: space-between;
+	}
+	.nav-logo{
+		padding: 12px 0 16px 12px;
+		padding-right: 0;
+	}
+	.nav-logo img{
+		width: 120px;
+	}
+	.nav-menu{
+		display: none;
+		position: absolute;
+		top: 70px;
+		left: 0;
+		right: 0;
+		flex-direction: column;/*垂直排列*/
+		background-color: #EDE7DC;
+		padding: 20px 0;
+		gap: 15px;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+		z-index: 99;
+	}
+	.menu-btn{
+		display: block;
+		position: absolute;
+		right: 40px;
+		top: 12px;
+	}
+	.menu-btn img{
+		width: 30px;
+		height: 30px;
+	}
+	.nav-account{
+		top: 18px;
+		right: 15px;
+	}
+	.nav-account img{
+		width: 25px;
+		height: 25px;
+	}
+	.nav-link{
+		font-size: 16px;
+		padding: 8px 20px;
+	}
+	.nav-menu.show{
+		display: flex;
+	}
+	
+	/*轮播图适配*/
+	#carousel{
+		margin-top: 70px; /*对应移动端导航栏高度*/
+		height: 250px;/*降低移动端轮播图高度*/
+	}
+	.carousel-item img{
+		height: 250px;
+	}
+	
+	/*搜索框适配*/
+	.search-wrapper{
+		width: 75%; /*扩大移动端搜索框宽度*/
+	}
+	.search-input{
+		font-size: 14px;
+	}
+	
+	/*标题样式适配*/
+	.header h1, .header-re h1, .connect h1{
+		font-size: 1.8em; /*缩小标题字体*/
+		padding: 10px 30px; /*减少内边距*/
+	}
+	.header-line-sec{
+		bottom: 70px; /*调整线条位置适配小字体*/
+	}
+	.header-line-fir-re{
+		top: 20px;
+	}
+	.header-line-sec-re{
+		bottom: 80px;
+	}
+	
+	/*书籍卡片适配*/
+	.book-container{
+		gap: 30px; /*缩小卡片间距*/
+		padding: 0 20px;
+	}
+	.book-card{
+		max-width: 140px; /*缩小卡片尺寸*/
+	}
+	.bookname{
+		font-size: 1.1em;
+	}
+	.author{
+		font-size: 0.8rem;
+	}
+	
+	/* 文章卡片适配*/
+	.article{
+		gap: 30px;
+		padding: 0 20px;
+	}
+	.article-card{
+		max-width: 220px;
+	}
+	.article-header{
+		font-size: 1.1em;
+	}
+	.article-intro{
+		font-size: 0.75em;
+	}
+	
+	/*深度连接适配*/
+	/*订阅卡片*/
+	.subscribe{
+		gap: 50px;
+		padding: 0 40px;
+	}
+	.subscribe-card{
+		max-width: 80px;
+	}
+	.subscribe-card h2{
+		font-size: 1.1em;
+	}
+	
+	/*详情卡片*/
+	.detail-container{
+		flex-direction: column;
+		padding: 0 !important; /* 清除默认内边距，重新控制布局 */
+		gap: 10px;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		justify-content: flex-start; /* 从顶部开始排列，对齐板块标题 */
+	}
+	
+	.detail-card{
+		flex-direction: column;/*垂直排列*/
+		padding: 0 15px 20px 15px;
+		gap: 15px;
+		width: 100%;
+		height: 100%;/*占满容器高度*/
+		overflow: hidden;/*禁止滚动*/
+		justify-content: center;
+		box-sizing: border-box;
+	}
+	/*详情卡片内容区*/
+	.detail-content{
+		max-width: 100%;
+		flex: none;
+	}
+	.detail-card h2{
+		font-size: 1.8em;
+		margin-bottom: 30px;
+		line-height: 1.2;
+		text-align: center;
+	}
+	.detail-card p{
+		font-size: 1em;
+		line-height: 2;
+		margin-bottom: 15px;
+		padding: 0 5px;
+		text-indent: 2em;
+	}
+	/*详情卡片按钮*/
+	.detail-action button{
+		padding: 8px 16px;
+		font-size: 0.9em;
+		border-radius: 4px;
+	}
+	/*详情卡片图片区*/
+	.detail-image{
+		width: 100%;
+		max-width: 200px;
+		height: auto;
+		flex: none;
+		margin: 0 auto;
+		border-radius: 6px;
+	}
+	.detail-image img{
+		max-height: 180px;
+		object-fit: contain;
+	}
+	
+	/*关闭按钮*/
+	.close-btn{
+		width: 40px;
+		height: 40px;
+		font-size: 24px;
+		top: 10px;
+		right: 10px;
+		z-index: 10;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 1;
+	}
+	
+	/*页脚和更多链接适配*/
+	.header-line-sec-foot{
+		bottom: 72px;
+	}
+	.more-link{
+		padding: 15px 20px;
+		font-size: 0.9em;
+	}
+	.bookname{
+		-webkit-line-clamp: 1;
+	}
+}
+
+/*平板端适配*/
+@media (min-width: 768px) and (max-width: 991px) {
+	.nav {
+		height: 80px;
+	}
+	.nav-logo img {
+		width: 160px;
+	}
+	.nav-menu {
+		gap: 40px; /* 缩小菜单间距 */
+	}
+	#carousel {
+		height: 450px; /* 平板端轮播图高度 */
+	}
+	.carousel-item img {
+		height: 450px;
+	}
+	.search-wrapper {
+		width: 60%; /* 平板端搜索框宽度 */
+	}
+	.book-container, .article {
+		gap: 50px;
+	}
+	
+	.detail-card p{
+		text-indent: 2em;
+	}
+}

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!--视口配置指令；移动端网页适配-->
+		<!-- 引入Bootstrap CSS（轮播功能必需） -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css"/>
+		<!-- 引入Bootstrap依赖的JS（必须按顺序引入，轮播功能依赖jQuery和Popper） -->
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+		<title>悦览时光 | 简约阅读，沉浸时光</title>
+	</head>
+	<body>
+		<!--导航栏-->
+		<nav class="nav">
+			<!--logo-->
+			<a class="nav-logo" href="#">
+				<img src="img/Logo.png" alt="logo"/>
+			</a>
+				
+			<div class="nav-container">
+				<ul class="nav-menu" id="main-nav">
+					<!--导航项-->
+					<li class="nav-item">
+						<a class="nav-link active" href="#">首页</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="second/bookshelf.html">书架</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="second/discover.html">发现</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">关于</a>
+					</li>
+					</ul>
+				</div>	
+				<!--折叠按钮-->
+				<button class="menu-btn" type="button" >
+					<img src="img/菜单.png" alt="菜单按钮"/>
+				</button>
+				<!--账号-->
+				<div class="nav-account">
+					<a href="second/account.html"><img src="img/用户.png" alt="account"/></a>
+				</div>
+		</nav>
+		
+		
+		<!--轮播图-->
+		<div id="carousel"  class="carousel slide" data-ride="carousel"
+		data-interval="3000"
+		data-pause="false"> <!--自动播放间隔,单位毫秒--><!--移除鼠标悬停暂停效果-->
+			<ol class="carousel-indicators"><!--标识轮播指示器-->
+				<li data-target="#carousel" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel" data-slide-to="1"></li>
+				<li data-target="#carousel" data-slide-to="2"></li>
+				<li data-target="#carousel" data-slide-to="3"></li>
+			</ol>
+			<!--轮播图片-->
+			<div class="carousel-inner" >
+				<div class="carousel-item active">
+					<img src="img/slide1.png" class="d-block w-100"/><!--d-block清除默认间隙，w-100让图片铺满容器-->
+				</div>
+				<div class="carousel-item">
+					<img src="img/slide2.png" class="d-block w-100"/>
+				</div>
+				<div class="carousel-item">
+					<img src="img/slide3.png" class="d-block w-100"/>
+				</div>
+				<div class="carousel-item">
+					<img src="img/slide4.png" class="d-block w-100"/>
+				</div>
+				
+			</div>
+			<!--左右切换按钮-->
+				<a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+				</a>
+				<a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+					<span class="carousel-control-next-icon"></span>
+				</a>
+			<!--搜索框区域-->
+			<div class="search-wrapper">
+				<form class="search-form">
+					<button class="search-submit-btn" type="submit">
+						<span><img src="img/搜索.png"/></span>
+					</button>
+					<input type="text" class="search-input" placeholder="书名、作者、ISBN">
+				</form>
+			</div>
+		</div>
+		
+		<!--新书速递-->
+		<header class="header"><!--标题-->
+		<div class="header-line-fir"></div>
+			<h1><a href="second/new.html">新书速递</a></h1>
+			<div class="header-line-sec"></div>
+		</header>
+		<div class="more-link">
+			<a href="second/new.html">更多>></a>
+		</div>
+		<section class="book-container"><!--书籍卡片-->
+			<div class="book-card">
+				<a href="third/new-zlgh.html" class="book-img-link">
+				<img src="img/葬礼过后.png" alt="葬礼过后"/>
+				</a>
+				<p class="bookname">
+					<a href="third/new-zlgh.html" class="book-link">葬礼过后</a>
+				</p>
+				<p class="author">[英]戴安娜·阿西尔</p>
+			</div>
+			<div class="book-card">
+				<img src="img/中国的法、社会与历史.png" alt="中国的法、社会与历史"/>
+				<p class="bookname">
+					中国的法、社会与历史
+				</p>
+				<p class="author">[日]仁井田陞</p>
+			</div>
+			<div class="book-card">
+				<img src="img/凯罗斯.png" alt="凯罗斯"/>
+				<p class="bookname">
+					凯罗斯
+				</p>
+				<p class="author">[德]燕妮·埃彭贝克</p>
+			</div>
+			<div class="book-card">
+				<img src="img/天气好的话，我会去找你.png" alt="天气好的话，我会去找你"/>
+				<p class="bookname">
+					天气好的话，我会去找你
+				</p>
+				<p class="author">[韩]李到禹</p>
+			</div>
+		</section>
+		
+		<!--精选阅读-->
+		<header class="header"><!--标题-->
+			<h1>精选阅读</h1>
+			<div class="header-line-sec"></div>
+		</header>
+		<div class="more-link">更多>></div>
+		<section class="book-container"><!--书籍卡片-->
+			<div class="book-card">
+				<a href="" class="book-img-link">
+				<img src="img/要有光.png" alt="要有光"/>
+				</a>
+				<p class="bookname">
+					<a href="" class="book-link">要有光</a>
+				</p>
+				<p class="author">梁鸿</p>
+			</div>
+			<div class="book-card">
+				<img src="img/白象.png" alt="白象"/>
+				<p class="bookname">
+					白象
+				</p>
+				<p class="author">班宇</p>
+			</div>
+			<div class="book-card">
+				<img src="img/一个女人一生中的二十四小时.png" alt="一个女人一生中的二十四小时"/>
+				<p class="bookname">
+					一个女人一生中的二十四小时
+				</p>
+				<p class="author">[奥]斯蒂芬·茨威格</p>
+			</div>
+			<div class="book-card">
+				<img src="img/林门郑氏.png" alt="林门郑氏"/>
+				<p class="bookname">
+					林门郑氏
+				</p>
+				<p class="author">[马来西亚]林雪虹</p>
+			</div>
+		</section>
+
+		<!--和你共鸣-->
+		<header class="header"><!--标题-->
+			<h1>和你共鸣</h1>
+			<div class="header-line-sec"></div>
+		</header>
+		<div class="more-link">更多>></div>
+		<section class="book-container"><!--书籍卡片-->
+			<div class="book-card">
+				<a href="" class="book-img-link">
+				<img src="img/若非，冬季.png" alt="若非，冬季"/>
+				</a>
+				<p class="bookname">
+					<a href="" class="book-link">若非，冬季</a>
+				</p>
+				<p class="author">[加]安妮·卡森</p>
+			</div>
+			<div class="book-card">
+				<img src="img/活山.png" alt="活山"/>
+				<p class="bookname">
+					活山
+				</p>
+				<p class="author">[英]娜恩·谢泼德</p>
+			</div>
+			<div class="book-card">
+				<img src="img/平原上的摩西.png" alt="平原上的摩西"/>
+				<p class="bookname">
+					平原上的摩西
+				</p>
+				<p class="author">双雪涛</p>
+			</div>
+			<div class="book-card">
+				<img src="img/事件.png" alt="事件"/>
+				<p class="bookname">
+					事件
+				</p>
+				<p class="author">[法]安妮·埃尔诺</p>
+			</div>
+		</section>
+		
+		<!--近期文章-->
+		<header class="header-re"><!--标题-->
+		<div class="header-line-fir-re"></div>
+			<h1><a href="second/re-article.html">近期文章</a></h1>
+			<div class="header-line-sec-re"></div>
+		</header>
+		<div class="more-link">
+			<a href="second/re-article.html">更多>></a>
+		</div>
+		<section class="article"><!--文章卡片-->
+			<div class="article-card">
+				<a href="third/re-article-bird.html" class="article-img-link">
+				<img src="img/鸟儿.png" alt="为什么鸟儿在黎明歌唱？"/>
+				</a>
+				<p class="article-header">
+					<a href="third/re-article-bird.html" class="article-link">为什么鸟儿在黎明歌唱？</a>
+				</p>
+				<p class="article-intro">清晨悦耳的鸟鸣让人心旷神怡，但是一天中的其
+他时间却很少能听到鸟叫，这是为什么？</p>
+			</div>
+			<div class="article-card">
+				<img src="img/早餐.png" alt="专业运动员的早餐和普通人的早餐有什么不同？"/>
+				<p class="article-header">
+					专业运动员的早餐和普通人的早餐有什么不同？
+				</p>
+				<p class="article-intro">专业运动员每天要进行大量的训练，他们的饮食必然和常人有所不同。你可曾好奇过他们每天早餐都吃些什么？</p>
+			</div>
+			<div class="article-card">
+				<img src="img/蔬菜.png" alt="蔬菜放冰箱如何才能保鲜更久？"/>
+				<p class="article-header">
+					蔬菜放冰箱如何才能保鲜更久？
+				</p>
+				<p class="article-intro">疫情期间，如何储存蔬菜才能保鲜更持久？不同蔬菜应该如何在冰箱中储存？</p>
+			</div>
+		</section>
+		
+		<!--深度连接-->
+		<div class="connect">
+		<header class="connect-header">
+			<div class="header-line-fir-connect"></div>
+			<h1>深度连接</h1>
+			<p class="">让有价值的阅读，在纷扰世界里找到你。</p>
+		</header>
+		
+		<section class="subscribe"><!--订阅卡片-->
+			<!--邮箱-->
+			<div class="subscribe-card" data-target="detail-mail">
+				<img src="img/mail.png" alt="邮箱"/>
+				<h2>每周文摘</h2>
+			</div>
+			<!--月历-->
+			<div class="subscribe-card" data-target="detail-calendar">
+				<img src="img/bg-calendar-f.png" alt="月历"/>
+				<h2>月度计划</h2>
+			</div>
+			<!--电刊-->
+			<div class="subscribe-card" data-target="detail-book">
+				<img src="img/办公文档_书籍1_book-one_linear.png" alt="电子刊"/>
+				<h2>电子书刊</h2>
+			</div>
+		</section>
+		
+		<!-- 详情卡片容器（覆盖整个板块） -->
+		<div class="detail-container">
+			<!--每周文摘详情-->
+			<div id="detail-mail" class="detail-card">
+				<button class="close-btn">×</button>
+				<div class="detail-content">
+					<h2>每周文摘</h2>
+					<p>每周精选5-8篇优质深度文章，覆盖认知、成长等领域，经过编辑精心筛选和解读，直接发送到你的邮箱，节省你的筛选时间。</p>
+					<div class="detail-action">
+						<button>立即订阅</button>
+					</div>
+				</div>
+				<!--右侧图片区-->
+				<div class="detail-image">
+					<img src="img/email.png" alt="每周文摘配图" />
+				</div>
+			</div>
+			<!--月度计划详情-->
+			<div id="detail-calendar" class="detail-card">
+				<button class="close-btn">×</button>
+				<div class="detail-content">
+					<h2>月度计划</h2>
+					<p>每月更新一份可落地的阅读计划，按主题分类（如心理学、历史、商业），搭配打卡提醒和读书笔记模板，帮你养成阅读习惯。</p>
+					<div class="detail-action">
+						<button>加入计划</button>
+					</div>
+				</div>
+				<!--右侧图片区-->
+				<div class="detail-image">
+					<img src="img/digital-calendar.png" alt="每周文摘配图" />
+				</div>
+			</div>
+			<!--电子书刊详情-->
+			<div id="detail-book" class="detail-card">
+				<button class="close-btn">×</button>
+				<div class="detail-content">
+					<h2>电子书刊</h2>
+					<p>精选优质电子书和电子杂志，支持多设备同步阅读，提供批注、划线功能，还有专属读书社群，和同好交流阅读心得。</p>
+					<div class="detail-action">
+						<button>浏览书库</button>
+					</div>
+				</div>
+				<!--右侧图片区-->
+				<div class="detail-image">
+					<img src="img/online-reading.png" alt="每周文摘配图" />
+				</div>
+			</div>
+			
+		</div>
+		
+		</div>
+		
+		<!--页脚-->
+		<footer class="footer">
+			<div class="header-line-sec-foot"></div>
+			<p>如有任何问题，可联系yuerantime2023@mail.com</p>
+			<p>用户协议 | 隐私声明 | 版权投诉</p>
+		</footer>
+		
+		<script src="js/menu.js"></script>
+		<script src="js/carousel.js"></script>
+		<script src="js/detail-card.js"></script>
+	</body>
+</html>

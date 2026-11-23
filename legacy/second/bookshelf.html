@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!--视口配置指令；移动端网页适配-->
+		<!-- 引入jQuery库-->
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="../css/bookshelf.css">
+		<title>书架 | 方寸之间，自有天地</title>
+	</head>
+	<body>
+		<!--导航栏-->
+		<nav class="nav">
+			<!--logo-->
+			<a class="nav-logo" href="#">
+				<img src="../img/Logo.png" alt="logo"/>
+			</a>
+				
+			<div class="nav-container">
+				<ul class="nav-menu" id="main-nav">
+					<!--导航项-->
+					<li class="nav-item">
+						<a class="nav-link" href="../index.html">首页</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="#">书架</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./discover.html">发现</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">关于</a>
+					</li>
+					</ul>
+				</div>	
+				<!--折叠按钮-->
+				<button class="menu-btn" type="button" >
+					<img src="../img/菜单.png" alt="菜单按钮"/>
+				</button>
+				<!--账号-->
+				<div class="nav-account">
+					<a href="account.html"><img src="../img/用户.png" alt="account"/></a>
+				</div>
+		</nav>
+		
+		<!--主内容-->
+		<div class="container">
+			<!--书架标题区域-->
+			<div class="bookshelf-header">
+				<h1>我的书架</h1>
+				<div class="bookshelf-actions">
+				<div class="bookshelf-filter">
+					<button class="filter-btn active" data-filter="all">全部</button>
+					<button class="filter-btn" data-filter="reading">在读</button>
+					<button class="filter-btn" data-filter="finished">已读完</button>
+					<button class="filter-btn" data-filter="wish">想读</button>
+				</div>
+				<div class="bookshelf-buttons">
+					<button class="action-btn manage-btn">书架管理</button>
+					<button class="action-btn upload-btn">
+					<input type="file" id="book-upload" accept=".epub,.pdf,.txt,.mobi" style="display: none;">
+					上传本地书籍
+					</button>
+				</div>
+				</div>
+			</div>
+					
+			<!--书架书籍列表-->
+			<div class="books-grid">
+				<!--书籍卡片1-在读-->
+				<div class="book-card" data-category="reading">
+					<a href="../third/new-zlgh.html" class="link">
+						<div class="book-cover">
+						<img src="../img/葬礼过后.png" alt="葬礼过后">
+						<div class="book-progress">
+							<span>65%</span>
+							<div class="progress-bar">
+								<div class="progress-fill" style="width: 65%;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="book-info">
+						<h3>葬礼过后</h3>
+						<p class="book-author">[英]戴安娜·阿西尔</p>
+						<p class="book-status">在读 · 第12章</p>
+					</div>
+					</a>
+				</div>
+				
+				<!--书籍卡片2-已读完-->
+				<div class="book-card" data-category="finished">
+					<a href="#" class="link">
+					<div class="book-cover">
+						<img src="../img/爱情与夏天.png" alt="爱情与夏天">
+						<div class="book-badge finished-badge">已读完</div>
+					</div>
+					<div class="book-info">
+						<h3>爱情与夏天</h3>
+						<p class="book-author">[爱尔兰]威廉·特雷弗</p>
+						<p class="book-status">已读完 · 2025.12.10</p>
+					</div>
+					</a>
+				</div>
+						
+				<!--书籍卡片3-想读-->
+				<div class="book-card" data-category="wish">
+					<a href="#" class="link">
+					<div class="book-cover">
+						<img src="../img/凯罗斯.png" alt="凯罗斯">
+						<div class="book-badge wish-badge">想读</div>
+					</div>
+					<div class="book-info">
+						<h3>凯罗斯</h3>
+						<p class="book-author">[德]燕妮·埃彭贝克</p>
+						<p class="book-status">想读 · 未开始</p>
+					</div>
+					</a>
+				</div>
+						
+				<!--书籍卡片4-在读-->
+				<div class="book-card" data-category="reading">
+					<a href="#" class="link">
+					<div class="book-cover">
+						<img src="../img/若非，冬季.png" alt="若非，冬季">
+						<div class="book-progress">
+							<span>32%</span>
+						<div class="progress-bar">
+							<div class="progress-fill" style="width: 32%;"></div>
+						</div>
+						</div>
+					</div>
+					<div class="book-info">
+						<h3>若非，冬季</h3>
+						<p class="book-author">[加]安妮·卡森</p>
+						<p class="book-status">在读 · 第8章</p>
+					</div>
+					</a>
+				</div>
+						
+				<!--书籍卡片5-已读完-->
+				<div class="book-card" data-category="finished">
+					<a href="#" class="link">
+					<div class="book-cover">
+						<img src="../img/天气好的话，我会去找你.png" alt="天气好的话，我会去找你">
+						<div class="book-badge finished-badge">已读完</div>
+					</div>
+					<div class="book-info">
+						<h3>天气好的话，我会去找你</h3>
+						<p class="book-author">[韩]李到禹</p>
+						<p class="book-status">已读完 · 2025.11.25</p>
+					</div>
+					</a>
+				</div>
+						
+				<!--书籍卡片6-想读-->
+				<div class="book-card" data-category="wish">
+					<a href="#" class="link">
+					<div class="book-cover">
+						<img src="../img/白象.png" alt="白象">
+						<div class="book-badge wish-badge">想读</div>
+					</div>
+					<div class="book-info">
+						<h3>白象</h3>
+						<p class="book-author">班宇</p>
+						<p class="book-status">想读 · 未开始</p>
+					</div>
+					</a>
+				</div>
+				
+				<!--书籍卡片7-想读-->
+				<div class="book-card" data-category="wish">
+					<a href="#" class="link">
+					<div class="book-cover">
+						<img src="../img/西蒙.png" alt="西蒙">
+						<div class="book-badge wish-badge">想读</div>
+					</div>
+					<div class="book-info">
+						<h3>西蒙</h3>
+						<p class="book-author">[俄]奈琳·阿布加良</p>
+						<p class="book-status">想读 · 未开始</p>
+					</div>
+				</div>
+				</a>
+			</div>
+					
+			<!-- 空书架提示（可选，无书籍时显示） -->
+			<div class="empty-shelf" style="display: none;">
+				<img src="../img/empty.png" alt="空书架">
+				<p>你的书架还是空的，快去发现好书吧！</p>
+				<a href="./discover.html" class="go-discover">去发现</a>
+			</div>
+		</div>
+		
+		<!--页脚-->
+		<footer class="footer">
+			<div class="header-line-sec-foot"></div>
+			<p>如有任何问题，可联系yuerantime2023@mail.com</p>
+			<p>用户协议 | 隐私声明 | 版权投诉</p>
+		</footer>
+				
+		<script src="../js/menu.js"></script>
+	</body>
+</html>

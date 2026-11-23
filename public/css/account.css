@@ -1,0 +1,278 @@
+/*全局样式重置*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background-image: url(../img/登录注册背景.jpg);
+	min-height: 100vh;
+	background-repeat: no-repeat; /*防止图片重复*/
+	background-position: center center; /*图片居中*/
+	background-size: cover; /*覆盖整个屏幕*/
+	background-attachment: fixed;
+	overflow: hidden;
+}
+
+/*左上角首页跳转入口*/
+.home-link {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	color: #fff;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 8px 12px;
+	background-color: rgba(0,0,0,0.1);
+	border-radius: 6px;
+	transition: background-color 0.3s ease;
+	z-index: 999;
+}
+.home-link:hover {
+	color: #E0B284;
+	background-color: rgba(0,0,0,0.2);
+}
+
+/*主内容*/
+.container {
+	/* 关键：用flex+100vh让容器占满视口 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: calc(100vh - 50px); /* 视口高度 - 页脚高度 */
+	padding: 0 20px;
+}
+
+/* 登录/注册卡片 */
+.auth-wrapper {
+	width: 100%;
+	max-width: 450px;
+	background-color: rgba(255, 255, 255, 0.95);
+	border-radius: 16px;
+	padding: 25px 30px;
+	box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* 网站名称（卡片内部，标签上方） */
+.site-title {
+	text-align: center;
+	margin-bottom: 12px; /* 与标签保持间距 */
+}
+
+.site-title h1 {
+    font-family: "Ma Shan Zheng", "ZCOOL KuaiLe", "PingFang SC", "Microsoft YaHei", cursive;
+    font-size: 45px;
+    font-weight: 400;
+    letter-spacing: 12px;
+    background: linear-gradient(135deg, #D49A6A 0%, #E8B894 50%, #D49A6A 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 
+        2px 2px 4px rgba(212, 154, 106, 0.2),
+        0 0 30px rgba(232, 184, 148, 0.1);
+    margin: 0;
+    padding: 8px 0;
+    position: relative;
+}
+
+/* 添加光晕装饰 */
+.site-title h1::before {
+    content: '✦';
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(212, 154, 106, 0.6);
+    font-size: 20px;
+}
+
+.site-title h1::after {
+    content: '✦';
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(212, 154, 106, 0.6);
+    font-size: 20px;
+}
+
+/* 切换标签 */
+.auth-tabs {
+	display: flex;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #e0d8cc;
+}
+
+.tab-btn {
+	flex: 1;
+	background: transparent;
+	border: none;
+	font-size: 18px;
+	color: #666;
+	padding: 2px 0;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	border-bottom: 2px solid transparent;
+}
+
+.tab-btn.active {
+	color: #D49A6A;
+	border-bottom: 2px solid #D49A6A;
+	font-weight: 600;
+}
+
+.tab-btn:hover:not(.active) {
+	color: #D49A6A;
+}
+
+/* 表单样式 */
+.auth-form {
+	width: 100%;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+.form-group label {
+	display: block;
+	font-size: 14px;
+	color: #333;
+	margin-bottom: 8px;
+}
+
+.form-group input {
+	width: 100%;
+	height: 48px;
+	padding: 0 15px;
+	border: 1px solid #e0d8cc;
+	border-radius: 8px;
+	font-size: 14px;
+	background-color: #fff;
+	transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+	outline: none;
+	border-color: #D49A6A;
+	box-shadow: 0 0 0 2px rgba(212, 154, 106, 0.1);
+}
+
+.form-group input::placeholder {
+	color: #999;
+}
+
+/* 表单选项（记住我/忘记密码） */
+.form-options {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 30px;
+	font-size: 14px;
+}
+
+.checkbox-label {
+	display: flex;
+	align-items: center;
+	color: #666;
+	cursor: pointer;
+}
+
+.checkbox-label input {
+	margin-right: 8px;
+	width: 16px;
+	height: 16px;
+	accent-color: #D49A6A;
+}
+
+.forgot-pwd {
+	color: #D49A6A;
+	text-decoration: none;
+}
+
+.forgot-pwd:hover {
+	text-decoration: underline;
+}
+
+/* 提交按钮 */
+.auth-btn {
+	width: 100%;
+	height: 50px;
+	background-color: #D49A6A;
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.auth-btn:hover {
+	background-color: #c48858;
+}
+
+/* 协议链接 */
+.agreement {
+	color: #D49A6A;
+	text-decoration: none;
+}
+
+.agreement:hover {
+	text-decoration: underline;
+}
+
+
+	
+/*页脚样式*/
+.footer{
+	position: relative;
+	text-align: center;
+}
+
+
+/*响应式设计*/
+@media (max-width: 768px) {
+	.home-link {
+		top: 15px;
+		left: 15px;
+		font-size: 14px;
+		padding: 6px 10px;
+	}
+	/*主内容适配*/
+	.container {
+		height: calc(100vh - 40px); /* 页脚高度缩小 */
+		padding: 0 15px;
+	}
+	
+	.auth-wrapper {
+		max-width: 95%;
+		padding: 10px 15px;
+	}
+	
+	.site-title h1 {
+		font-size: 36px;
+		letter-spacing: 6px;
+	}
+	
+	.form-group label {
+		font-size: 12px;
+	}
+	
+	.form-group input {
+		height: 40px;
+	}
+	
+	.auth-btn {
+		height: 42px;
+		font-size: 14px;
+	}
+	
+	/* 页脚适配 */
+	.footer{
+		height: 40px;
+		font-size: 11px;
+	}
+}

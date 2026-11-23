@@ -1,0 +1,398 @@
+/*全局样式重置*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background-color: #fff;
+	min-height: 100vh;
+}
+
+/*导航栏样式*/
+.nav{
+	display: flex;/*弹性布局*/
+	padding:0 16px;
+	background-color: #EDE7DC;
+	height: 90px;
+	align-items: center;
+	/*始终悬浮、跟随滚动设置*/
+	position: fixed; 
+	top: 0;/*固定在页面顶部*/
+	left: 0;/*从页面左侧开始*/
+	width: 100%;/*铺满整个页面宽度*/
+	z-index: 999;/*确保在最顶层（数值足够大即可）*/
+}
+/*Logo*/
+.nav-logo{
+	display: inline-block;
+	padding-top: 12px;
+	padding-left: 32px;
+	padding-right: 80px;/*和导航项的间距*/
+}
+
+.nav-logo img{
+	width: 200px;
+	height: auto;
+}
+/*导航菜单*/
+.nav-menu{
+	display: flex;
+	align-items: center;
+	list-style: none;/*清除ul默认圆点*/
+	margin: 0;
+	padding: 0;
+	gap: 80px;/*导航栏按钮间距*/
+}
+
+.nav-link{
+	display: inline-block;/*行内块布局，支持padding和圆角*/
+	background-color: #E0B284;
+	color: #fff;
+	text-decoration: none;/*清除下划线*/
+	border-radius: 20px;/*圆角矩形效果*/
+	font-size: 18px;
+	padding: 8px 16px;
+}
+.nav-item a:hover{
+	color: #D3D3D3;
+}
+.nav-link.active,
+.nav-link:hover{
+	background-color: #D49A6A;
+}
+
+.menu-btn{
+	background: transparent;
+	border: none;
+	cursor: pointer;/*光标*/
+	padding: 6px 10px;
+	
+	align-items: center;
+	justify-content: center;
+	
+	border-radius: 6px;
+	display: none;
+}
+.menu-btn img{
+	width: 40px;
+	height: 40px;
+}
+/*账号*/
+.nav-account{
+	position: absolute;/*绝对定位*/
+	top: 28px;
+	right: 40px;
+}
+.nav-account img{
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+}
+
+/*主内容*/
+.container {
+	max-width: 1000px;
+	margin: 120px auto;
+	padding: 0 5%;
+}
+.article-header {
+	margin-bottom: 2rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid #eee;
+}
+.article-header p {
+	font-size: 1.1rem;
+	color: #666;
+	line-height: 1.7;
+}
+.article-title {
+	font-size: 2rem;
+	margin-bottom: 0.8rem;
+	color: #8B5A2B;
+	font-weight: 700;
+	line-height: 1.3;
+}
+.article-date {
+	color: #999;
+	font-size: 0.9rem;
+	margin-bottom: 1rem;
+	display: block;
+}
+.article-image {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	margin: 2rem 0;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.article-content {
+	font-size: 1rem;
+	color: #444;
+}
+.article-content p {
+	margin-bottom: 1.5rem;
+	text-indent: 2em;
+}
+.article-content p:last-child {
+	color: #777;
+	font-size: 0.9rem;
+	margin-top: 2rem;
+	border-top: 1px dashed #eee;
+	padding-top: 1rem;
+	text-indent: 0;
+}
+
+.reading-settings {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 998;
+	width: 300px;
+	background-color: #fff;
+	border-radius: 12px;
+	box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+	overflow: hidden;
+	transition: all 0.3s ease;
+	transform: translateX(320px);
+}
+
+.reading-settings.show {
+	transform: translateX(0);
+}
+
+.settings-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 16px;
+	background-color: #EDE7DC;
+	border-bottom: 1px solid #eee;
+}
+
+.settings-title {
+	font-size: 16px;
+	font-weight: 600;
+	color: #8B5A2B;
+}
+
+.settings-close {
+	background: none;
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+	color: #666;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	transition: background-color 0.2s ease;
+}
+
+.settings-close:hover {
+	background-color: #f0f0f0;
+}
+
+.settings-body {
+	padding: 16px;
+}
+
+.setting-group {
+	margin-bottom: 16px;
+}
+
+.setting-label {
+	font-size: 14px;
+	color: #333;
+	margin-bottom: 8px;
+	display: block;
+	font-weight: 500;
+}
+
+.setting-options {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.setting-btn {
+	padding: 6px 12px;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	background-color: #fff;
+	cursor: pointer;
+	font-size: 14px;
+	transition: all 0.2s ease;
+}
+
+.setting-btn:hover {
+	background-color: #f5f5f5;
+}
+
+.setting-btn.active {
+	background-color: #E0B284;
+	color: #fff;
+	border-color: #E0B284;
+}
+
+.range-control {
+	width: 100%;
+	margin-top: 8px;
+}
+
+/*阅读设置开关按钮*/
+.settings-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 997;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #E0B284;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.toggle-icon {
+    width: 24px; 
+    height: 24px;
+    object-fit: contain;
+}
+
+.settings-toggle:hover {
+    background-color: #D49A6A;
+}
+
+/*页脚样式*/
+.footer{
+	position: relative;
+	text-align: center;
+	padding: 10px;
+}
+.header-line-sec-foot{
+	position: absolute;
+	bottom: 70px;/*此处调整线条高度*/
+	left: 50%;
+	transform: translate(-50%);
+	width: 100%;
+	height: 2px;
+	background-color: #E0B284;
+	z-index: 1;
+}
+
+
+/*响应式设计*/
+@media (max-width: 768px) {
+	/*导航栏适配*/
+	.nav{
+		height: 70px;
+		padding: 0 8px;
+		justify-content: space-between;
+	}
+	.nav-logo{
+		padding: 12px 0 16px 12px;
+		padding-right: 0;
+	}
+	.nav-logo img{
+		width: 120px;
+	}
+	.nav-menu{
+		display: none;
+		position: absolute;
+		top: 70px;
+		left: 0;
+		right: 0;
+		flex-direction: column;/*垂直排列*/
+		background-color: #EDE7DC;
+		padding: 20px 0;
+		gap: 15px;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+		z-index: 99;
+	}
+	.menu-btn{
+		display: block;
+		position: absolute;
+		right: 40px;
+		top: 12px;
+	}
+	.menu-btn img{
+		width: 30px;
+		height: 30px;
+	}
+	.nav-account{
+		top: 18px;
+		right: 15px;
+	}
+	.nav-account img{
+		width: 25px;
+		height: 25px;
+	}
+	.nav-link{
+		font-size: 16px;
+		padding: 8px 20px;
+	}
+	.nav-menu.show{
+		display: flex;
+	}
+	
+	/*主内容适配*/
+	.container{
+		margin-top: 90px;
+	}
+	.article-title {
+		font-size: 1.6rem;
+	}
+	
+	/* 阅读设置栏移动端适配 */
+	.reading-settings {
+        width: calc(100% - 40px);
+        right: 20px;
+        bottom: 80px;
+        /* 关键：用 120% 超量偏移，确保完全隐藏（避免高度计算误差） */
+        transform: translateY(120%);
+        position: fixed;
+        z-index: 998;
+        pointer-events: none;
+        /* 增加：强制隐藏溢出内容（防止子元素露出） */
+        overflow: hidden;
+    }
+    
+    .reading-settings.show {
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+    
+    /* 开关按钮样式 */
+    .settings-toggle {
+        width: 45px;
+        height: 45px;
+        z-index: 999; /* 确保按钮在最上层 */
+    }
+    
+    .toggle-icon {
+        width: 22px;
+        height: 22px;
+    }
+	
+	/*页脚和更多链接适配*/
+	.header-line-sec-foot{
+		bottom: 80px;
+	}
+	.more-link{
+		padding: 15px 20px;
+		font-size: 0.9em;
+	}
+	.bookname{
+		-webkit-line-clamp: 1;
+	}
+}

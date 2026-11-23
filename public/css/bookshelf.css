@@ -1,0 +1,469 @@
+/*全局样式重置*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background-color: #fff;
+	min-height: 100vh;
+}
+
+/*导航栏样式*/
+.nav{
+	display: flex;/*弹性布局*/
+	padding:0 16px;
+	background-color: #EDE7DC;
+	height: 90px;
+	align-items: center;
+	/*始终悬浮、跟随滚动设置*/
+	position: fixed; 
+	top: 0;/*固定在页面顶部*/
+	left: 0;/*从页面左侧开始*/
+	width: 100%;/*铺满整个页面宽度*/
+	z-index: 999;/*确保在最顶层（数值足够大即可）*/
+}
+/*Logo*/
+.nav-logo{
+	display: inline-block;
+	padding-top: 12px;
+	padding-left: 32px;
+	padding-right: 80px;/*和导航项的间距*/
+}
+
+.nav-logo img{
+	width: 200px;
+	height: auto;
+}
+/*导航菜单*/
+.nav-menu{
+	display: flex;
+	align-items: center;
+	list-style: none;/*清除ul默认圆点*/
+	margin: 0;
+	padding: 0;
+	gap: 80px;/*导航栏按钮间距*/
+}
+
+.nav-link{
+	display: inline-block;/*行内块布局，支持padding和圆角*/
+	background-color: #E0B284;
+	color: #fff;
+	text-decoration: none;/*清除下划线*/
+	border-radius: 20px;/*圆角矩形效果*/
+	font-size: 18px;
+	padding: 8px 16px;
+}
+.nav-item a:hover{
+	color: #D3D3D3;
+}
+.nav-link.active,
+.nav-link:hover{
+	background-color: #D49A6A;
+}
+
+.menu-btn{
+	background: transparent;
+	border: none;
+	cursor: pointer;/*光标*/
+	padding: 6px 10px;
+	
+	align-items: center;
+	justify-content: center;
+	
+	border-radius: 6px;
+	display: none;
+}
+.menu-btn img{
+	width: 40px;
+	height: 40px;
+}
+/*账号*/
+.nav-account{
+	position: absolute;/*绝对定位*/
+	top: 28px;
+	right: 40px;
+}
+.nav-account img{
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+}
+
+/*主内容*/
+.container {
+	max-width: 1200px; 
+	margin: 90px auto;
+	padding: 30px 20px;
+}
+
+/* 书架头部样式 */
+.bookshelf-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 30px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #f0e9df;
+}
+
+.bookshelf-header h1 {
+	color: #333;
+	font-size: 28px;
+	font-weight: 600;
+}
+
+.bookshelf-filter {
+	display: flex;
+	gap: 12px;
+}
+
+.filter-btn {
+	background-color: #f8f5f0;
+	border: none;
+	color: #666;
+	padding: 8px 18px;
+	border-radius: 20px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+	background-color: #E0B284;
+	color: #fff;
+}
+
+/* 书架操作区域布局 */
+.bookshelf-actions {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+/* 功能按钮样式 */
+.bookshelf-buttons {
+	display: flex;
+	gap: 12px;
+}
+
+.action-btn {
+	border: none;
+	border-radius: 20px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	padding: 8px 18px;
+}
+
+.manage-btn {
+	background-color: #f8f5f0;
+	color: #666;
+}
+
+.upload-btn {
+	background-color: #E0B284;
+	color: #fff;
+}
+
+.manage-btn:hover {
+	background-color: #eee9e2;
+	color: #333;
+}
+
+.upload-btn:hover {
+	background-color: #D49A6A;
+}
+
+/* 书籍网格布局 */
+.books-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 40px;
+}
+
+/* 书籍卡片样式 */
+.book-card {
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+	overflow: hidden;
+	transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.book-card .link {
+	display: block;/*让链接铺满整个卡片*/
+	text-decoration: none; 
+	height: 100%;
+}
+
+.book-cover {
+	position: relative;
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+}
+
+.book-cover img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.book-card:hover .book-cover img {
+	transform: scale(1.05);
+}
+
+/* 阅读进度 */
+.book-progress {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 10px;
+	background: linear-gradient(transparent, rgba(0,0,0,0.6));
+	color: #fff;
+}
+
+.book-progress span {
+	display: block;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.progress-bar {
+	width: 100%;
+	height: 4px;
+	background-color: rgba(255,255,255,0.3);
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+.progress-fill {
+	height: 100%;
+	background-color: #E0B284;
+	border-radius: 2px;
+	transition: width 0.5s ease;
+}
+
+/* 书籍状态徽章 */
+.book-badge {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	padding: 5px 12px;
+	border-radius: 15px;
+	font-size: 12px;
+	color: #fff;
+}
+
+.finished-badge {
+	background-color: #88c092;
+}
+
+.wish-badge {
+	background-color: #8da1b9;
+}
+
+/* 书籍信息 */
+.book-info {
+	padding: 15px;
+}
+
+.book-info h3 {
+	/*多行文本截断并显示省略号*/
+	overflow: hidden;/*隐藏超出容器的内容*/
+	text-overflow: ellipsis;/*文本溢出时显示省略号*/
+	
+	display: -webkit-box;
+	-webkit-line-clamp: 1;/*单行截断*/
+	-webkit-box-orient: vertical;/*让文本按垂直方向排列以正确计算行数*/
+	/*支持更多浏览器*/
+	line-clamp: 1;
+	box-orient: vertical;
+	
+	font-size: 18px;
+	color: #333;
+	font-weight: 600;
+	margin-bottom: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+.book-author {
+	font-size: 14px;
+	color: #999;
+	margin-bottom: 8px;
+}
+
+.book-status {
+	font-size: 12px;
+	color: #666;
+}
+
+/* 空书架提示 */
+.empty-shelf {
+	text-align: center;
+	padding: 60px 20px;
+	color: #999;
+}
+
+.empty-shelf img {
+	width: 150px;
+	height: auto;
+	margin-bottom: 20px;
+	opacity: 0.6;
+}
+
+.empty-shelf p {
+	font-size: 18px;
+	margin-bottom: 30px;
+}
+
+.go-discover {
+	display: inline-block;
+	padding: 10px 25px;
+	background-color: #E0B284;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 20px;
+	font-size: 16px;
+	transition: background-color 0.3s ease;
+}
+
+.go-discover:hover {
+	background-color: #D49A6A;
+}
+	
+/*页脚样式*/
+.footer{
+	position: relative;
+	text-align: center;
+	padding: 10px;
+}
+.header-line-sec-foot{
+	position: absolute;
+	bottom: 70px;/*此处调整线条高度*/
+	left: 50%;
+	transform: translate(-50%);
+	width: 100%;
+	height: 2px;
+	background-color: #E0B284;
+	z-index: 1;
+}
+
+
+/*响应式设计*/
+@media (max-width: 768px) {
+	/*导航栏适配*/
+	.nav{
+		height: 70px;
+		padding: 0 8px;
+		justify-content: space-between;
+	}
+	.nav-logo{
+		padding: 12px 0 16px 12px;
+		padding-right: 0;
+	}
+	.nav-logo img{
+		width: 120px;
+	}
+	.nav-menu{
+		display: none;
+		position: absolute;
+		top: 70px;
+		left: 0;
+		right: 0;
+		flex-direction: column;/*垂直排列*/
+		background-color: #EDE7DC;
+		padding: 20px 0;
+		gap: 15px;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+		z-index: 99;
+	}
+	.menu-btn{
+		display: block;
+		position: absolute;
+		right: 40px;
+		top: 12px;
+	}
+	.menu-btn img{
+		width: 30px;
+		height: 30px;
+	}
+	.nav-account{
+		top: 18px;
+		right: 15px;
+	}
+	.nav-account img{
+		width: 25px;
+		height: 25px;
+	}
+	.nav-link{
+		font-size: 16px;
+		padding: 8px 20px;
+	}
+	.nav-menu.show{
+		display: flex;
+	}
+	/*主内容适配*/
+	.container {
+		padding: 20px 15px;
+		margin-top: 70px;
+	}
+	/* 书架响应式 */
+	.bookshelf-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 15px;
+	}
+		
+	.bookshelf-header h1 {
+		font-size: 24px;
+	}
+	
+	.bookshelf-actions {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 15px;
+		width: 100%;
+	}
+	
+	.bookshelf-filter, .bookshelf-buttons {
+		width: 100%;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+	}
+	
+	.action-btn {
+		font-size: 14px;
+		padding: 6px 15px;
+	}
+		
+	.books-grid {
+		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+		gap: 20px;
+	}
+		
+	.book-cover {
+		height: 240px;
+	}
+		
+	.book-title {
+		font-size: 16px;
+	}
+	
+	/*页脚适配*/
+	.header-line-sec-foot{
+		bottom: 80px;
+	}
+}

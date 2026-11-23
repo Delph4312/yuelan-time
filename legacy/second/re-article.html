@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!--视口配置指令；移动端网页适配-->
+		<!-- 引入jQuery库-->
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="../css/re-article.css">
+		<title>近期文章</title>
+	</head>
+	<body>
+		<!--导航栏-->
+		<nav class="nav">
+			<!--logo-->
+			<a class="nav-logo" href="#">
+				<img src="../img/Logo.png" alt="logo"/>
+			</a>
+				
+			<div class="nav-container">
+				<ul class="nav-menu" id="main-nav">
+					<!--导航项-->
+					<li class="nav-item">
+						<a class="nav-link" href="../index.html">首页</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./bookshelf.html">书架</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./discover.html">发现</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">关于</a>
+					</li>
+					</ul>
+				</div>	
+				<!--折叠按钮-->
+				<button class="menu-btn" type="button" >
+					<img src="../img/菜单.png" alt="菜单按钮"/>
+				</button>
+				<!--账号-->
+				<div class="nav-account">
+					<a href="account.html"><img src="../img/用户.png" alt="account"/></a>
+				</div>
+		</nav>
+		
+		<!-- 页面标题区域 -->
+		    <div class="page-header">
+		        <h1 class="page-title">近期文章</h1>
+		        <p class="time-desc">最近30天发布 · 共收录42篇文章</p>
+		    </div>
+		
+		    <!-- 筛选选项区 -->
+		    <div class="filter-section">
+		        <div class="filter-group">
+		            <span class="filter-label">按分类：</span>
+		            <div class="filter-tags">
+		                <span class="filter-tag active">全部</span>
+		                <span class="filter-tag">图书评论</span>
+		                <span class="filter-tag">作者访谈</span>
+		                <span class="filter-tag">行业观察</span>
+		                <span class="filter-tag">阅读指南</span>
+		            </div>
+		        </div>
+		        <div class="filter-group">
+		            <span class="filter-label">按标签：</span>
+		            <div class="filter-tags">
+		                <span class="filter-tag active">全部</span>
+		                <span class="filter-tag">文学</span>
+		                <span class="filter-tag">历史</span>
+		                <span class="filter-tag">心理学</span>
+		                <span class="filter-tag">科普</span>
+		            </div>
+		        </div>
+		        <div class="filter-group">
+		            <span class="filter-label">按类型：</span>
+		            <div class="filter-tags">
+		                <span class="filter-tag active">全部</span>
+		                <span class="filter-tag">长文</span>
+		                <span class="filter-tag">短文</span>
+		                <span class="filter-tag">访谈</span>
+		            </div>
+		        </div>
+		    </div>
+
+		<!--主内容-->
+		<div class="main-container">
+			<!--左侧文章列表-->
+			<div class="article-content">
+				<div class="timeline">
+					<!--今日文章分组-->
+					<div class="timeline-group">
+						<h2 class="timeline-date">今日</h2>
+						<div class="article-card">
+							<a href="../third/re-article-bird.html" class="article-thumbnail-link">
+								<img src="../img/鸟儿.png" alt="鸟儿" class="article-thumbnail">
+							</a>
+							<div class="article-info">
+								<a href="../third/re-article-bird.html" class="article-title">为什么鸟儿在黎明歌唱？</a>
+								<div class="article-meta">
+									<span>作者：丹妮</span>
+									<span>发布时间：14:16</span>
+								</div>
+								<div class="article-tags">
+									<span class="article-tag">科普</span>
+									<span class="article-tag">自然</span>
+								</div>
+								<p class="article-excerpt">清晨悦耳的鸟鸣让人心旷神怡，但是一天中的其他时间却很少能听到鸟叫。为什么鸟儿都喜欢在清晨歌唱？来本文中寻找答案吧。</p>
+							</div>
+						</div>
+					</div>
+					
+					<!--本周文章分组-->
+					<div class="timeline-group">
+						<h2 class="timeline-date">本周</h2>
+						<div class="article-card">
+							<img src="../img/早餐.png" alt="" class="article-thumbnail">
+							<div class="article-info">
+								<a href="#" class="article-title">专业运动员的早餐和普通人的早餐有什么不同？</a>
+								<div class="article-meta">
+									<span>作者：董静</span>
+									<span>发布时间：01-20 15:48</span>
+								</div>
+								<div class="article-tags">
+									<span class="article-tag">科普</span>
+									<span class="article-tag">健康</span>
+								</div>
+								<p class="article-excerpt">专业运动员每天要进行大量的训练，他们的饮食必然和常人有所不同。你可曾好奇过他们每天早餐都吃些什么？</p>
+							</div>
+						</div>
+						<div class="article-card">
+							<img src="../img/蔬菜.png" alt="" class="article-thumbnail">
+							<div class="article-info">
+								<a href="#" class="article-title">蔬菜放冰箱如何才能保鲜更久？</a>
+								<div class="article-meta">
+									<span>作者：齐磊</span>
+									<span>发布时间：01-18 09:12</span>
+								</div>
+								<div class="article-tags">
+									<span class="article-tag">科普</span>
+									<span class="article-tag">健康</span>
+								</div>
+								<p class="article-excerpt">疫情期间，如何储存蔬菜才能保鲜更持久？不同蔬菜应该如何在冰箱中储存？</p>
+							</div>
+						</div>
+					</div>
+					
+					<!--本月文章分组-->
+					<div class="timeline-group">
+						<h2 class="timeline-date">本月</h2>
+						<div class="article-card">
+							<img src="../img/电子书与书.png" alt="" class="article-thumbnail">
+							<div class="article-info">
+								<a href="#" class="article-title">2025年出版行业报告：实体书市场的回暖与新挑战</a>
+							<div class="article-meta">
+								<span>作者：李涛</span>
+								<span>发布时间：01-10 11:30</span>
+							</div>
+							<div class="article-tags">
+								<span class="article-tag">行业观察</span>
+								<span class="article-tag">出版</span>
+							</div>
+							<p class="article-excerpt">2025年实体书市场呈现出回暖趋势，尤其是文学类、少儿类图书销量同比增长15%，但同时也面临着电子书冲击、渠道变革等新挑战。报告深入分析了行业现状与未来趋势...</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--右侧边栏-->
+			<div class="sidebar">
+				<!-- 热门文章排行 -->
+				<div class="sidebar-widget">
+					<h3 class="widget-title">阅读焦点</h3>
+					<ul class="hot-articles">
+						<li class="hot-item">
+							<span class="hot-rank">1</span>
+							<a href="#" class="hot-title">2025年出版行业报告：实体书市场的回暖与新挑战</a>
+						</li>
+						<li class="hot-item">
+							<span class="hot-rank">2</span>
+							<a href="#" class="hot-title">2026年文学新书盘点：那些值得期待的本土创作</a>
+						</li>
+						<li class="hot-item">
+							<span class="hot-rank">3</span>
+							<a href="#" class="hot-title">蔬菜放冰箱如何才能保鲜更久？</a>
+						</li>
+						<li class="hot-item">
+							<span class="hot-rank">4</span>
+							<a href="#" class="hot-title">扬州早茶：雅致菜肴中品味千年古城文化韵味</a>
+						</li>
+						<li class="hot-item">
+							<span class="hot-rank">5</span>
+							<a href="#" class="hot-title">心理学视角下的阅读：为什么我们需要沉浸式阅读</a>
+						</li>
+					</ul>
+				</div>
+					
+				<!-- 订阅更新提醒 -->
+				<div class="sidebar-widget">
+					<h3 class="widget-title">订阅更新提醒</h3>
+					<form class="subscribe-form">
+						<input type="email" class="subscribe-input" placeholder="输入你的邮箱地址" required>
+						<button type="submit" class="subscribe-btn">订阅每周文章推送</button>
+					</form>
+				</div>
+			</div>
+		</div>
+			
+		<!--页脚-->
+		<footer class="footer">
+			<div class="header-line-sec-foot"></div>
+			<p>如有任何问题，可联系yuerantime2023@mail.com</p>
+			<p>用户协议 | 隐私声明 | 版权投诉</p>
+		</footer>
+				
+		<script src="../js/menu.js"></script>
+	</body>
+</html>

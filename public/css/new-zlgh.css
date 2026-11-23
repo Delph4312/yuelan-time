@@ -1,0 +1,442 @@
+/*全局样式重置*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background-color: #fff;
+	min-height: 100vh;
+}
+
+/*导航栏样式*/
+.nav{
+	display: flex;/*弹性布局*/
+	padding:0 16px;
+	background-color: #EDE7DC;
+	height: 90px;
+	align-items: center;
+	/*始终悬浮、跟随滚动设置*/
+	position: fixed; 
+	top: 0;/*固定在页面顶部*/
+	left: 0;/*从页面左侧开始*/
+	width: 100%;/*铺满整个页面宽度*/
+	z-index: 999;/*确保在最顶层（数值足够大即可）*/
+}
+/*Logo*/
+.nav-logo{
+	display: inline-block;
+	padding-top: 12px;
+	padding-left: 32px;
+	padding-right: 80px;/*和导航项的间距*/
+}
+
+.nav-logo img{
+	width: 200px;
+	height: auto;
+}
+/*导航菜单*/
+.nav-menu{
+	display: flex;
+	align-items: center;
+	list-style: none;/*清除ul默认圆点*/
+	margin: 0;
+	padding: 0;
+	gap: 80px;/*导航栏按钮间距*/
+}
+
+.nav-link{
+	display: inline-block;/*行内块布局，支持padding和圆角*/
+	background-color: #E0B284;
+	color: #fff;
+	text-decoration: none;/*清除下划线*/
+	border-radius: 20px;/*圆角矩形效果*/
+	font-size: 18px;
+	padding: 8px 16px;
+}
+.nav-item a:hover{
+	color: #D3D3D3;
+}
+.nav-link.active,
+.nav-link:hover{
+	background-color: #D49A6A;
+}
+
+.menu-btn{
+	background: transparent;
+	border: none;
+	cursor: pointer;/*光标*/
+	padding: 6px 10px;
+	
+	align-items: center;
+	justify-content: center;
+	
+	border-radius: 6px;
+	display: none;
+}
+.menu-btn img{
+	width: 40px;
+	height: 40px;
+}
+/*账号*/
+.nav-account{
+	position: absolute;/*绝对定位*/
+	top: 28px;
+	right: 40px;
+}
+.nav-account img{
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+}
+
+/*主内容*/
+.container {
+	max-width: 1200px;
+	margin: 90px auto;
+	padding: 0 20px; 
+}
+
+.main-content {
+	background-color: #fff;
+	padding: 40px;
+	border-radius: 12px;
+	box-shadow: 0 2px 12px rgba(212, 154, 106, 0.1);
+}
+/*基础信息*/
+.book-title {
+	font-size: 32px;
+	color: #8B5A2B;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #E0B284;
+    font-weight: 700;
+}
+
+.book-header {
+	display: flex;
+	gap: 40px;
+	margin-bottom: 40px;
+	align-items: flex-start;/*顶部对齐*/
+}
+
+.book-cover img {
+	width: 220px;
+    height: auto;
+    border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);/*封面阴影，更真实*/
+	border: 1px solid #E0B28455;
+}
+
+.book-base {
+	flex: 1;/*占满剩余空间*/
+	font-size: 16px;
+}
+
+.book-base p{
+	margin-bottom: 12px; /*信息行间距*/
+    color: #555;
+}
+
+/*操作按钮*/
+.actions {
+	margin-bottom: 40px;
+	padding: 15px 0;
+	border-top: 1px solid #EDE7DC;
+	border-bottom: 1px solid #EDE7DC;
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+.actions button {
+	background-color: #E0B284;
+	color: #fff;
+	border: none;
+	border-radius: 20px;
+	padding: 8px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.actions button.active {
+	background-color: #D49A6A; /* 激活态颜色 */
+}
+
+.actions button:hover {
+	background-color: #D49A6A;
+}
+
+.actions a {
+	color: #8B5A2B;
+	text-decoration: none;
+	font-size: 16px;
+	padding-bottom: 2px;
+}
+
+.actions a:hover {
+	color: #D49A6A;
+	text-decoration: none;
+}
+
+/*简介*/
+.content-intro, .author-intro, .catalogue {
+    margin-bottom: 40px;
+}
+
+.content-intro h3, .author-intro h3, .catalogue h3 {
+    font-size: 20px;
+    color: #8B5A2B;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-left: 4px solid #E0B284;
+    font-weight: 600;
+}
+
+.content-intro p, .author-intro p, .catalogue p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.8;
+	text-indent: 2em;
+}
+
+/*目录*/
+.catalogue p {
+	margin-bottom: 8px;
+	padding-left: 10px;
+}
+
+.catalogue p::before {
+	content: "└ ";
+	color: #E0B284;
+	font-size: 14px;
+}
+
+/*和你共鸣*/
+.header{
+	position: relative;
+	text-align: center;
+	padding: 40px 0;
+	margin-bottom: 30px;
+}
+.header-line-sec{
+	position: absolute;
+	bottom: 90px;/*此处调整线条高度*/
+	left: 50%;
+	transform: translate(-50%);
+	width: 100%;
+	height: 2px;
+	background-color: #E0B284;
+	z-index: 1;
+}
+.header h1{
+	display: inline-block;
+	font-size: 3em;
+	color: #D49A6A;
+	background-color: #fff;/*背景色遮挡线条中段*/
+	padding: 20px 70px;/*标题位置 遮挡宽度*/
+	position: relative;
+	z-index: 2;
+}
+
+/*书籍卡片*/
+.book-container{
+	display: flex;
+	justify-content: center;/*多个元素整体居中*/
+	gap: 80px;
+	padding: 0 50px;
+	margin-bottom: 50px;
+	flex-wrap: wrap;/*空间不足时换行*/
+}
+.book-card{
+	text-align: center;
+	max-width: 180px;
+}
+.book-card img{
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.bookname{
+	/*多行文本截断并显示省略号*/
+	overflow: hidden;/*隐藏超出容器的内容*/
+	text-overflow: ellipsis;/*文本溢出时显示省略号*/
+	
+	display: -webkit-box;
+	-webkit-line-clamp: 1;/*单行截断*/
+	-webkit-box-orient: vertical;/*让文本按垂直方向排列以正确计算行数*/
+	/*支持更多浏览器*/
+	line-clamp: 1;
+	box-orient: vertical;
+	
+	font-size: 1.3em;
+	color: #555;
+	margin-bottom: 3px;
+}
+.book-img-link{
+	display: block;/*block后，整个矩形区域都可点击*/
+}
+.book-img-link img{
+	border: none;
+}
+.book-link{
+	color: #555;
+	text-decoration: none;/*清除下划线*/
+}
+.book-link:hover{
+	color: #E0B284;
+	text-decoration: none;
+}
+.author{
+	font-size: 0.9rem;
+	color: #555;
+}
+.more-link{
+	text-align: right;
+	cursor: pointer;
+	padding: 20px 50px;
+	color: #666;
+}
+
+/*页脚样式*/
+.footer{
+	position: relative;
+	text-align: center;
+	padding: 10px;
+}
+.header-line-sec-foot{
+	position: absolute;
+	bottom: 70px;/*此处调整线条高度*/
+	left: 50%;
+	transform: translate(-50%);
+	width: 100%;
+	height: 2px;
+	background-color: #E0B284;
+	z-index: 1;
+}
+
+
+/*响应式设计*/
+@media (max-width: 768px) {
+	/*导航栏适配*/
+	.nav{
+		height: 70px;
+		padding: 0 8px;
+		justify-content: space-between;
+	}
+	.nav-logo{
+		padding: 12px 0 16px 12px;
+		padding-right: 0;
+	}
+	.nav-logo img{
+		width: 120px;
+	}
+	.nav-menu{
+		display: none;
+		position: absolute;
+		top: 70px;
+		left: 0;
+		right: 0;
+		flex-direction: column;/*垂直排列*/
+		background-color: #EDE7DC;
+		padding: 20px 0;
+		gap: 15px;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+		z-index: 99;
+	}
+	.menu-btn{
+		display: block;
+		position: absolute;
+		right: 40px;
+		top: 12px;
+	}
+	.menu-btn img{
+		width: 30px;
+		height: 30px;
+	}
+	.nav-account{
+		top: 18px;
+		right: 15px;
+	}
+	.nav-account img{
+		width: 25px;
+		height: 25px;
+	}
+	.nav-link{
+		font-size: 16px;
+		padding: 8px 20px;
+	}
+	.nav-menu.show{
+		display: flex;
+	}
+	/*主内容适配*/
+	.container{
+		margin-top: 70px;
+	}
+	.book-header {
+		flex-direction: column; /* 小屏封面和信息垂直排列 */
+		gap: 20px;
+	}
+	.book-cover img {
+		width: 180px; /* 小屏封面缩小 */
+		margin: 0 auto;
+		display: block;
+	}
+	.main-content {
+		padding: 20px; /* 小屏内边距减小 */
+	}
+	.book-title {
+		font-size: 26px;
+	}
+	.nav-menu {
+		gap: 20px; /* 小屏导航间距减小 */
+	}
+	.nav-logo {
+		padding-right: 20px;
+	}
+	
+	/*和你共鸣适配*/
+	/*标题样式适配*/
+	.header h1, .header-re h1, .connect h1{
+		font-size: 1.8em; /*缩小标题字体*/
+		padding: 10px 30px; /*减少内边距*/
+	}
+	.header-line-sec{
+		bottom: 70px; /*调整线条位置适配小字体*/
+	}
+	.header-line-fir-re{
+		top: 20px;
+	}
+	.header-line-sec-re{
+		bottom: 80px;
+	}
+	
+	/*书籍卡片适配*/
+	.book-container{
+		gap: 30px; /*缩小卡片间距*/
+		padding: 0 20px;
+	}
+	.book-card{
+		max-width: 140px; /*缩小卡片尺寸*/
+	}
+	.bookname{
+		font-size: 1.1em;
+	}
+	.author{
+		font-size: 0.8rem;
+	}
+	/*页脚和更多链接适配*/
+	.header-line-sec-foot{
+		bottom: 80px;
+	}
+	.more-link{
+		padding: 15px 20px;
+		font-size: 0.9em;
+	}
+	.bookname{
+		-webkit-line-clamp: 1;
+	}
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!--视口配置指令；移动端网页适配-->
+		<!-- 引入jQuery库-->
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="../css/discover.css">
+		<title>发现 | 探索未知，邂逅同好</title>
+	</head>
+	<body>
+		<!--导航栏-->
+		<nav class="nav">
+			<!--logo-->
+			<a class="nav-logo" href="#">
+				<img src="../img/Logo.png" alt="logo"/>
+			</a>
+				
+			<div class="nav-container">
+				<ul class="nav-menu" id="main-nav">
+					<!--导航项-->
+					<li class="nav-item">
+						<a class="nav-link" href="../index.html">首页</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./bookshelf.html">书架</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="#">发现</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">关于</a>
+					</li>
+					</ul>
+				</div>	
+				<!--折叠按钮-->
+				<button class="menu-btn" type="button" >
+					<img src="../img/菜单.png" alt="菜单按钮"/>
+				</button>
+				<!--账号-->
+				<div class="nav-account">
+					<a href="account.html"><img src="../img/用户.png" alt="account"/></a>
+				</div>
+		</nav>
+		
+		<!--主内容-->
+		<div class="container">
+			<!-- 分类模块 -->
+			<section class="category-section">
+				<h2 class="section-title">探索分类</h2>
+				<div class="category-grid">
+					<!-- 分类卡片 - 替换文字图标为图片 -->
+					<div class="category-card">
+						<div class="category-img">
+							<img src="../img/文学经典.png" alt="文学经典">
+						</div>
+						<h3 class="category-name">文学经典</h3>
+						<p class="category-desc">经典名著与文学佳作</p>
+						<a href="#" class="category-link">查看更多</a>
+					</div>
+					<div class="category-card">
+						<div class="category-img">
+							<img src="../img/科幻奇幻.png" alt="科幻奇幻">
+						</div>
+						<h3 class="category-name">科幻奇幻</h3>
+						<p class="category-desc">脑洞大开的幻想世界</p>
+						<a href="#" class="category-link">查看更多</a>
+					</div>
+					<div class="category-card">
+						<div class="category-img">
+							<img src="../img/散文随笔.png" alt="散文随笔">
+						</div>
+						<h3 class="category-name">散文随笔</h3>
+						<p class="category-desc">细腻的生活与思考</p>
+						<a href="#" class="category-link">查看更多</a>
+					</div>
+					<div class="category-card">
+						<div class="category-img">
+							<img src="../img/悬疑推理.png" alt="悬疑推理">
+						</div>
+						<h3 class="category-name">悬疑推理</h3>
+						<p class="category-desc">烧脑的解谜之旅</p>
+						<a href="#" class="category-link">查看更多</a>
+					</div>
+					<div class="category-card">
+						<div class="category-img">
+							<img src="../img/自我提升.png" alt="自我提升">
+						</div>
+						<h3 class="category-name">自我提升</h3>
+						<p class="category-desc">成长与认知升级</p>
+						<a href="#" class="category-link">查看更多</a>
+					</div>
+					<div class="category-card">
+						<div class="category-img">
+							<img src="../img/旅行游记.png" alt="旅行游记">
+						</div>
+						<h3 class="category-name">旅行游记</h3>
+						<p class="category-desc">在路上的故事</p>
+						<a href="#" class="category-link">查看更多</a>
+					</div>
+				</div>
+			</section>
+		
+			<!--社区模块-->
+			<section class="community-section">
+				<h2 class="section-title">阅读社区</h2>
+				<div class="community-posts">
+					<!-- 社区帖子 -->
+					<div class="post-card">
+						<div class="post-header">
+							<img src="../img/蓝脉冲.png" alt="用户头像" class="post-avatar">
+							<div class="post-user">
+								<h4 class="username">蓝脉冲</h4>
+								<p class="post-time">2小时前</p>
+							</div>
+						</div>
+						<div class="post-content">
+							<h3 class="post-title">“原子会和你一起做些什么？”</h3>
+							<p class="post-desc">可以说是任何事。<br />无论是你还是你或爱或恨的每一个人，也无论你们何时做过的何种事情，它们都是现场的目击者，更是密切的参与者。你曾经闻到的每一丝气味，看到的每一片景色，欣赏的每一曲旋律，以及唇间发出的每一声哭喊与叹息，皆因那些游走于空气与你身体最深暗角落的原子而产生。</p>
+						</div>
+						<div class="post-actions">
+							<span class="action-btn"><img src="../img/爱心.png"/>️ 28</span>
+							<span class="action-btn"><img src="../img/收藏.png"/>️ 12</span>
+							<span class="action-btn"><img src="../img/讨论.png"/>️ 5</span>
+						</div>
+					</div>
+					<div class="post-card">
+						<div class="post-header">
+							<img src="../img/在落基山.png" alt="用户头像" class="post-avatar">
+							<div class="post-user">
+								<h4 class="username">在落基山</h4>
+								<p class="post-time">昨天 19:30</p>
+							</div>
+						</div>
+						<div class="post-content">
+							<h3 class="post-title">读了《想象一个没有国家的社会》</h3>
+							<p class="post-desc">难得一见的学术普及读物，从编排到撰写，既保证了把话说清楚，还提供了充分的延展性。如果只能以一本书打开文化人类学，那我一定首推这本。</p>
+						</div>
+						<div class="post-actions">
+							<span class="action-btn"><img src="../img/爱心.png"/>️ 156</span>
+							<span class="action-btn"><img src="../img/收藏.png"/>️ 48</span>
+							<span class="action-btn"><img src="../img/讨论.png"/>️ 32</span>
+						</div>
+					</div>
+					<div class="post-card">
+						<div class="post-header">
+							<img src="../img/高山草甸.png" alt="用户头像" class="post-avatar">
+							<div class="post-user">
+								<h4 class="username">高山草甸</h4>
+								<p class="post-time">3天前</p>
+							</div>
+						</div>
+						<div class="post-content">
+							<h3 class="post-title">我拿什么来形容你？戈壁滩上的热带鱼</h3>
+							<p class="post-desc">荒漠里喂养的金鱼，离春天只有二十公分的雪兔……<br/>本应厚重、贫瘠、苍凉的生活，在李娟独树一帜、灵光闪闪的笔触下，却焕发出别样的温暖、丰盈与喜悦。每次重读《阿勒泰的角落》，总能真切地看到独自站在荒野中，努力而耐心地体会着种种美感的过去的自己……</p>
+						</div>
+						<div class="post-actions">
+							<span class="action-btn"><img src="../img/爱心.png"/>️ 98</span>
+							<span class="action-btn"><img src="../img/收藏.png"/>️ 36</span>
+							<span class="action-btn"><img src="../img/讨论.png"/>️ 24</span>
+						</div>
+					</div>
+				</div>
+				<a href="#" class="more-posts">查看更多社区内容 →</a>
+			</section>
+		</div>
+
+
+		<!--页脚-->
+		<footer class="footer">
+			<div class="header-line-sec-foot"></div>
+			<p>如有任何问题，可联系yuerantime2023@mail.com</p>
+			<p>用户协议 | 隐私声明 | 版权投诉</p>
+		</footer>
+		
+		<script src="../js/menu.js"></script>
+	</body>
+</html>
